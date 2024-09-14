@@ -2,25 +2,28 @@ import { useState} from "react"
 
 function App() {
 
-  const[valueInput_petrol, setValueInput_petrol] = useState('')
-  const[valueInput_ethanol, setValueInput_ethanol] = useState('')
+  const[dataForm, setDataForm] = useState({
+    petrol: '',
+    ethanol: '',
+  })
 
-  const onChangeInput_petrol = (event) => {
-    setValueInput_petrol(event.target.value)
+  const changeDataForm = (event) => {
+    setDataForm((dataForm) => ({
+      ...dataForm,
+      [event.target.name]: event.target.value,
+    }))
   }
 
-  const onChangeInput_ethanol = (event) => {
-    setValueInput_ethanol(event.target.value)
-  }
+  console.log(dataForm);
 
   return ( 
     <div>
       <h1>Bomba de combustível</h1>
       <div>
         <label>Valor da Gasolina</label><br></br>
-        <input onChange={onChangeInput_petrol} placeholder="Informe o valor da gasolina..."></input><br></br><br></br>
+        <input name="petrol" onChange={changeDataForm} placeholder="Informe o valor da gasolina..."></input><br></br><br></br>
         <label>Valor do Etanol</label><br></br>
-        <input onChange={onChangeInput_ethanol} placeholder="Informe o valor do etanol..."></input>
+        <input name="ethanol" onChange={changeDataForm} placeholder="Informe o valor do etanol..."></input><br></br><br></br>
       </div>
    </div>
   )
