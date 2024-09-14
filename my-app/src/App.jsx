@@ -19,9 +19,9 @@ function App() {
     const dataFormNew = { ...dataForm }
     const resultCalc = dataFormNew.ethanol / dataFormNew.petrol
     if(resultCalc <= 0.7){
-      alert("O etanol está " + resultCalc +"% do valor da gasolina.</br>É mais vantajoso abastecer com etanol.")
+      alert("O etanol está " + resultCalc +"% do valor da gasolina. É mais vantajoso abastecer com etanol.")
     } else {
-      alert("O etanol está " + resultCalc +"% do valor da gasolina.</br>É mais vantajoso abastecer com gasolina.")
+      alert("O etanol está " + resultCalc +"% do valor da gasolina. É mais vantajoso abastecer com gasolina.")
     }
   }
 
